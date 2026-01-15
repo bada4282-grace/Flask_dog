@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Gallery - COMING'S QUOTIDIEN</title>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="/" class="nav-logo">COMING'S QUOTIDIEN</a>
+        <div class="nav-menu">
+            <a href="/gallery" class="current">갤러리</a>
+            <a href="/map">출몰지역</a>
+        </div>
+    </nav>
+
+    <header class="gallery-header">
+        <h1>코코와 밍밍이, 오늘도 귀여움</h1>
+        <p>코코와 밍밍이의 더 많은 사진을 만나보세요</p>
+        <img src="../static/image/21.jpg" alt="갤러리 메인" class="header-img">
+    </header>
+
+    <section class="gallery-intro">
+        <div class="intro-card">
+            <img src="../static/image/g_소개_코코.jpg" alt="코코">
+            <div class="text">
+                <h3>코코 (COCO)</h3>
+                <p>애교가 넘치는 소형견이에요. 조용히 있다가도 엄마만 보면 에너지가 폭발!</p>
+                <p>간식 먹기와 낮잠은 하루의 가장 중요한 일정입니다.</p>
+            </div>
+        </div>
+        <div class="intro-card">
+            <img src="../static/image/g_소개_밍밍.jpg" alt="밍밍">
+            <div class="text">
+                <h3>밍밍 (MINGMING)</h3>
+                <p>10kg의 중형견이에요. 에너지가 넘치는 무지 활발한 친구랍니다!</p>
+                <p>몸은 제법 큰데, 스스로는 아직도 완전 애기라고 생각하는 애교 덩어리랍니다.</p>
+            </div>
+        </div>
+    </section>
+
+    <main class="gallery-container">
+        <h2>Gallery Collection</h2>
+        <div class="gallery-grid">
+            {# 1부터 20까지 반복 (끝번호 21은 포함 안 됨) #}
+            {% for i in range(1, 21) %}
+            <div class="gallery-item">
+                <img src="../static/image/{{ i }}.jpg" alt="갤러리 사진 {{ i }}">
+            </div>
+            {% endfor %}
+        </div>
+    </main>
+
+    <footer class="gallery-footer">
+        <p>© COMING'S QUOTIDIEN</p>
+    </footer>
+</body>
+</html>

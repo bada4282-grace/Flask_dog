@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>출몰지역 - COMING'S QUOTIDIEN</title>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="/" class="nav-logo">COMING'S QUOTIDIEN</a>
+        <div class="nav-menu">
+            <a href="/gallery">갤러리</a>
+            <a href="/map" class="current">출몰지역</a>
+        </div>
+    </nav>
+
+    <header class="sub-header">
+        <h1>주요 출몰지역</h1>
+        <p>코코와 밍밍이가 자주 나타나는 장소들을 공유합니다.</p>
+    </header>
+
+    <main class="map-container">
+        <section class="map-display">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d804027.7773683304!2d126.87659259999998!3d38.07658700000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357c972f3e22c2eb%3A0x82bde7db7ba94b6b!2z6rK96riw64-EIOqzoOyWkeyLnCDrjZXslpHqtaw!5e0!3m2!1sko!2skr!4v1768390359689!5m2!1sko!2skr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                width="100%" 
+                height="500" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </section>
+    </main>
+
+    <footer class="map-footer">
+        <blockquote>"강아지가 사람보다 낫다" — 김문수</blockquote>
+        <a href="/" class="btn-home">홈으로 돌아가기</a>
+    </footer>
+</body>
+</html>

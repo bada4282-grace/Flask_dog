@@ -1,0 +1,431 @@
+/* =========================================
+   0. 폰트 설정 (이름을 kerisbaeum 으로 변경)
+   ========================================= */
+@font-face {
+    font-family: 'kerisbaeum';  /* 여기 이름을 원하시는 대로 수정 */
+    src: url('../fonts/kerisbaeum_r.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* =========================================
+   1. 기본 설정 (Reset & Variables)
+   ========================================= */
+:root {
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --accent-color: #ff6b6b;
+    --gray-bg: #f9f9f9;
+    --border-color: #eeeeee;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /* 위에서 정한 이름 'kerisbaeum'을 정확히 써줘야 적용됩니다 */
+    font-family: 'kerisbaeum', 'Pretendard', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    word-break: keep-all;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* =========================================
+   2. 네비게이션바 (.navbar)
+   ========================================= */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    background-color: var(--bg-color);
+    /* 하단 테두리 제거 (PDF처럼 깔끔하게) */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-logo {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #000; /* 로고는 깔끔한 검정 */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.nav-menu a {
+    margin-left: 25px;
+    color: #888;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.nav-menu a:hover,
+.nav-menu a.current {
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+/* =========================================
+   3. 공통 헤더
+   ========================================= */
+header {
+    text-align: center;
+    padding: 3rem 1rem 1rem; /* 하단 패딩 줄임 */
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+header h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #000;
+    font-weight: normal; /* 폰트 자체가 개성 있으므로 두께 조절 */
+}
+
+.sub-title {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.description {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 3rem;
+    line-height: 1.8;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 메인 이미지 스타일 */
+.main-img, .header-img {
+    border-radius: 20px; /* 둥근 모서리 */
+    margin: 2rem auto;
+    width: 100%;
+    max-width: 500px; /* PDF처럼 너무 크지 않게 */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05); /* 아주 은은한 그림자 */
+}
+
+/* =========================================
+   4. Index 페이지 섹션들
+   ========================================= */
+
+/* --- 공통 섹션 스타일 --- */
+.intro, .daily-life, .quotes {
+    padding: 4rem 2rem;
+    max-width: 1000px; /* 전체 너비를 너무 넓지 않게 */
+    margin: 0 auto;
+}
+
+.intro h2, .daily-life h2 {
+    text-align: left; /* PDF 느낌대로 왼쪽 정렬 혹은 중앙 */
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    border-left: 5px solid var(--accent-color); /* 제목 옆 포인트 줄 */
+    padding-left: 15px;
+    color: #333;
+}
+
+/* 프로필 카드 */
+.profile-container {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.profile-card {
+    background: var(--bg-color);
+    width: 320px;
+    text-align: center;
+}
+
+.profile-card img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%; /* 완전 원형 */
+    object-fit: cover;
+    margin: 0 auto 1.5rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* 사진에만 살짝 그림자 */
+}
+
+.profile-card h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.4rem;
+    color: #000;
+}
+
+.profile-card p {
+    color: #666;
+    margin-bottom: 0.3rem;
+    font-size: 0.95rem;
+}
+
+/* --- Daily Life --- */
+.daily-container {
+    display: flex;
+    align-items: flex-start; /* 위쪽 정렬 */
+    gap: 3rem;
+}
+
+.daily-image-box {
+    flex: 1;
+}
+
+.daily-main-img {
+    border-radius: 15px;
+    width: 100%;
+}
+
+.daily-info {
+    flex: 1;
+    padding-top: 10px;
+}
+
+.life-item {
+    margin-bottom: 2.5rem;
+}
+
+.life-item h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: var(--accent-color);
+}
+
+.life-item p {
+    color: #555;
+    line-height: 1.7;
+}
+
+/* --- Quotes (가족들의 한마디) --- */
+.quotes {
+    background-color: var(--gray-bg); /* 여기만 아주 연한 회색 배경 */
+    border-radius: 20px;
+    margin-bottom: 4rem;
+}
+
+.quotes h3 {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.quote-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    background: #fff; /* 흰색 말풍선 느낌 */
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+}
+
+.quote-profile {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+    object-fit: cover;
+}
+
+blockquote {
+    font-style: normal;
+    color: #333;
+    margin: 0;
+}
+
+blockquote p {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+blockquote cite {
+    font-size: 0.9rem;
+    color: #999;
+    font-style: normal;
+}
+
+/* =========================================
+   5. Gallery 페이지 (PDF: 격자 형태)
+   ========================================= */
+.gallery-intro {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 0 2rem;
+    max-width: 900px;
+    margin: 0 auto 3rem;
+}
+
+.intro-card {
+    display: flex;
+    align-items: center;
+    background: var(--gray-bg);
+    padding: 1rem;
+    border-radius: 15px;
+    width: 48%;
+}
+
+.intro-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%; /* 갤러리 소개도 원형 */
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+.intro-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.2rem;
+}
+
+.intro-card p {
+    font-size: 0.85rem;
+    color: #666;
+    line-height: 1.4;
+}
+
+/* 갤러리 그리드 */
+.gallery-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem 5rem;
+}
+
+.gallery-container h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.gallery-grid {
+    display: grid;
+    /* PDF처럼 꽉 찬 격자 느낌 */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px; /* 간격 좁게 */
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    aspect-ratio: 1 / 1;
+    background: #eee;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05); /* 확대 효과 */
+}
+
+/* =========================================
+   6. Map 페이지
+   ========================================= */
+.map-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 2rem 4rem;
+}
+
+.map-display {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    border: 5px solid #fff; /* 지도 테두리 흰색 액자처럼 */
+}
+
+.map-display iframe {
+    display: block;
+}
+
+.map-footer {
+    text-align: center;
+    padding: 3rem 1rem;
+    background-color: var(--gray-bg); /* 연한 회색 */
+    margin-top: auto;
+}
+
+.map-footer blockquote {
+    color: #555;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.btn-home {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: #fff;
+    padding: 10px 30px;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.btn-home:hover {
+    background-color: #ff4757;
+}
+
+/* =========================================
+   7. Footer (공통)
+   ========================================= */
+footer {
+    text-align: center;
+    padding: 3rem;
+    background-color: #fff;
+    border-top: 1px solid #eee;
+    color: #999;
+    font-size: 0.8rem;
+    margin-top: auto;
+}
+
+.gallery-footer {
+    margin-top: 3rem;
+}
+
+/* =========================================
+   8. 모바일 반응형
+   ========================================= */
+@media (max-width: 768px) {
+    .nav-logo { font-size: 1rem; }
+    .nav-menu a { margin-left: 15px; font-size: 0.9rem; }
+    
+    header h1 { font-size: 1.8rem; }
+    
+    .profile-container { gap: 2rem; }
+    .profile-card { width: 100%; max-width: 300px; }
+    
+    .daily-container { flex-direction: column; }
+    
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    
+    .intro-card { width: 100%; margin-bottom: 10px; }
+    .gallery-intro { flex-direction: column; gap: 10px; }
+}
